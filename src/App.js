@@ -1,9 +1,9 @@
+import ThemeChanger from "./components/ThemeChanger";
 
 
 const App = ()=> {
   return (
-   <>
-   </>
+  <ThemeChanger/>
   );
 }
 

@@ -1,8 +1,7 @@
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../redux/actions";
-import  lightTheme  from "../styles/theme";
-import  darkTheme  from "../styles/theme";
+import { lightTheme, darkTheme } from "../styles/theme";
 
 const ToggleButton = () => {
   const theme = useSelector((state) => state.theme.theme);

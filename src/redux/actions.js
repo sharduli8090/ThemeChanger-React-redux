@@ -1,5 +1,4 @@
-export const setTheme = (theme) => {
-  console.log(theme, "asctionb");
+export const setTheme = (theme) => { 
   return {
     type: 'SET_THEME',
     payload: theme,

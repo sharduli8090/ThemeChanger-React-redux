@@ -2,8 +2,7 @@ const initialState = {
   theme: false,  
 };
 
-const reducer = (state = initialState, action) => {
-  console.log("reducre")
+const reducer = (state = initialState, action) => { 
   switch (action.type) {
     case 'SET_THEME':
       return {

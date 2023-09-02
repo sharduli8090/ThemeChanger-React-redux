@@ -1,30 +1,43 @@
-import { useState } from "react";
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { setTheme } from "../redux/actions";
+import { lightTheme, darkTheme } from "../styles/theme";
 
-const ToggleButton = ()=>{
-    const [isDarkTheme, setDarkTheme] = useState(false); 
+const ToggleButton = () => {
+  const theme = useSelector((state) => state.theme.theme);
+  const dispatch = useDispatch();
 
-    const handleToggle = () => {
-      setDarkTheme(!isDarkTheme);
-    }; 
-    return(
-
-<div className={`w-20 h-8 mb-4 rounded-lg flex items-center justify-${isDarkTheme ? 'end' : 'start'} transition-all duration-300 ${isDarkTheme ? 'bg-gray-300' : 'bg-yellow-300'}`}>
-      <button onClick={handleToggle}  >
-        <div className={`transition-transform transform ${isDarkTheme ? 'translate-x-full' : 'translate-x-0'}`}>
-          {isDarkTheme ? (
-            <div className="bg-gray-600 rounded-lg p-1.5 mr-4">
-            <BiSolidMoon className="w-6 h-6 " />
+  const toggleTheme = () => {
+    dispatch(setTheme(!theme));
+  };
+  // setInterval(()=>{dispatch(setTheme(!theme));},3000);
+  return (
+    <div
+      className={`w-20 h-8 mb-4 rounded-lg flex items-center justify-${
+        !theme ? "start" : "end"
+      } transition-all duration-300 ${
+        !theme ? lightTheme.toggleBg : darkTheme.toggleBg
+      }`}
+    >
+      <button onClick={toggleTheme}>
+        <div
+          className={`transition-transform transform ${
+            !theme ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {!theme ? (
+            <div className={`bg-${lightTheme.toggleBtn} rounded-lg p-1.5`}>
+              <BiSolidSun className="w-6 h-6 text-yellow-200" />
             </div>
           ) : (
-            <div className="bg-yellow-600 rounded-lg p-1.5">
-            <BiSolidSun className="w-6 h-6 text-yellow-200" />
+            <div className={`bg-${darkTheme.toggleBtn} rounded-lg p-1.5 mr-4`}>
+              <BiSolidMoon className="w-6 h-6 " />
             </div>
           )}
         </div>
       </button>
     </div>
-    );
-}
+  );
+};
 
 export default ToggleButton;

@@ -1,7 +1,7 @@
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "./redux/actions";
-import { lightTheme, darkTheme } from "./styles/theme";
+// import { lightTheme, darkTheme } from "./styles/theme";
 
 const App = () => {
   const theme = useSelector((state) => state.theme.theme);
@@ -14,14 +14,14 @@ const App = () => {
     <>
      <div
       className={`bg-${
-        theme ? darkTheme.bodyBgColor : lightTheme.bodyBgColor
+        theme ? "gray-900" : "white"
       } flex justify-center items-center min-h-screen flex-col`}
     >
          <div
       className={`w-20 h-8 mb-4 rounded-lg flex items-center justify-${
         !theme ? "start" : "end"
       } transition-all duration-300 ${
-        !theme ? lightTheme.toggleBg : darkTheme.toggleBg
+        !theme ? "bg-yellow-300" : "bg-gray-300"
       }`}
     >
       <button onClick={toggleTheme}>
@@ -31,11 +31,11 @@ const App = () => {
           }`}
         >
           {!theme ? (
-            <div className={`bg-${lightTheme.toggleBtn} rounded-lg p-1.5`}>
+            <div className={`bg-yellow-600 rounded-lg p-1.5`}>
               <BiSolidSun className="w-6 h-6 text-yellow-200" />
             </div>
           ) : (
-            <div className={`bg-${darkTheme.toggleBtn} rounded-lg p-1.5 mr-4`}>
+            <div className={`bg-gray-600 rounded-lg p-1.5 mr-4`}>
               <BiSolidMoon className="w-6 h-6 " />
             </div>
           )}
@@ -44,9 +44,9 @@ const App = () => {
     </div>
       <div
         className={`text-${
-          theme ? darkTheme.btnTextColor : lightTheme.btnTextColor
+          theme ? 'black' : 'white'
         } flex justify-center items-center text-xl text-center w-64 h-32 bg-${
-          theme ? darkTheme.boxBgColor : lightTheme.boxBgColor
+          theme ? 'blue-200' : 'gray-600'
         } rounded-lg shadow-lg p-4 `}
       >
         Theme Changer

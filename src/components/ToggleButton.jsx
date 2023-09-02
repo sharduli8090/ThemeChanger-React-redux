@@ -26,11 +26,11 @@ const ToggleButton = () => {
           }`}
         >
           {!theme ? (
-            <div className={`bg-${lightTheme.toggleBtn} rounded-lg p-1.5`}>
+            <div className={`${lightTheme.toggleBtn} rounded-lg p-1.5`}>
               <BiSolidSun className="w-6 h-6 text-yellow-200" />
             </div>
           ) : (
-            <div className={`bg-${darkTheme.toggleBtn} rounded-lg p-1.5 mr-4`}>
+            <div className={`${darkTheme.toggleBtn} rounded-lg p-1.5 mr-4`}>
               <BiSolidMoon className="w-6 h-6 " />
             </div>
           )}

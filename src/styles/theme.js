@@ -3,7 +3,7 @@ export const lightTheme = {
     boxBgColor:'blue-200',
     btnTextColor: 'black',
     toggleBg:'bg-yellow-300',
-    toggleBtn:'yellow-600'
+    toggleBtn:'bg-yellow-600'
   };
   
   export const darkTheme = {
@@ -11,6 +11,6 @@ export const lightTheme = {
     boxBgColor:'gray-600',
     btnTextColor: 'white',
     toggleBg:'bg-gray-300',
-    toggleBtn:'gray-600'
+    toggleBtn:'bg-gray-600'
   };
   

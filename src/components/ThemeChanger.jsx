@@ -1,7 +1,7 @@
 import "../index.css";
 import ToggleButton from "./ToggleButton";
 import { useSelector } from "react-redux";
-import { lightTheme, darkTheme } from "../styles/theme";
+import { lightTheme, darkTheme } from "../styles/theme.js";
 
 const ThemeChanger = () => {
   const theme = useSelector((state) => state.theme.theme);

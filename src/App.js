@@ -45,9 +45,7 @@ const App = () => {
       <div
         className={`text-${
           theme ? 'black' : 'white'
-        } flex justify-center items-center text-xl text-center w-64 h-32 bg-${
-          theme ? 'blue-200' : 'gray-600'
-        } rounded-lg shadow-lg p-4 `}
+        } flex justify-center items-center text-xl text-center w-64 h-32 bg-${!theme ? 'blue-200' : 'gray-600'} rounded-lg shadow-lg p-4 `}
       >
         Theme Changer
       </div>
